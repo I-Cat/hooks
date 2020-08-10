@@ -30,7 +30,7 @@ jobs:
       shell: bash
       run: |
         mkdir artifact
-        7z a artifact/kodi-win.zip ./build/Release/kodi.exe
+        7z a artifact/kodi-win.zip ./build/Release/kodi.text
     # Upload ninja binary archive as an artifact
     - name: Upload artifact
       uses: actions/upload-artifact@v1
