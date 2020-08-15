@@ -1,1 +1,15 @@
-npm install electron@10.0.0-beta.21
+name: Windows
+on:
+#  pull_request:
+#  push:
+When: commit
+#  release:
+#    types: published
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps: |
+     use: actions/checkout@v1
+     use: actions/checkout@v2
+          npm install electron@10.0.0-beta.21
