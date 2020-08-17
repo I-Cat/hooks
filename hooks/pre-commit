@@ -1,4 +1,5 @@
-#!/bin/sh
+#!
+/bin/sh
 #
 # An example hook script to verify what is about to be committed.
 # Called by "git commit" with no arguments.  The hook should
@@ -13,7 +14,7 @@ then
 else
 	# Initial commit: diff against an empty tree object
 	against=$(git hash-object -t tree /dev/null)
-fi
+#fi
 
 # If you want to allow non-ASCII filenames set this variable to true.
 allownonascii=$(git config --type=bool hooks.allownonascii)
