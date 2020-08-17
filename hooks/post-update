@@ -1,8 +1,10 @@
-#!/bin/sh
+#!
+/bin/sh
 #
 # An example hook script to prepare a packed repository for use over
 # dumb transports.
 #
 # To enable this hook, rename this file to "post-update".
 
-exec git update-server-info
+#exec ( string $command [, array &$output [, int &$return_var ]] ) : string
+echo exec ($git update-server-info)
