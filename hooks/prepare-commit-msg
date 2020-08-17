@@ -1,4 +1,5 @@
-#!/bin/sh
+#!
+/bin/sh
 #
 # An example hook script to prepare the commit log message.
 # Called by "git commit" with the name of the file that has the
@@ -26,17 +27,17 @@ SHA1=$3
 
 /usr/bin/perl -i.bak -ne 'print unless(m/^. Please enter the commit message/..m/^#$/)' "$COMMIT_MSG_FILE"
 
-# case "$COMMIT_SOURCE,$SHA1" in
-#  ,|template,)
-#    /usr/bin/perl -i.bak -pe '
-#       print "\n" . `git diff --cached --name-status -r`
-# 	 if /^#/ && $first++ == 0' "$COMMIT_MSG_FILE" ;;
-#  *) ;;
-# esac
+ case "$COMMIT_SOURCE,$SHA1" in
+  ,|template,)
+    /usr/bin/perl -i.bak -pe '
+       print "\n" . `git diff --cached --name-status -r`
+ 	 if /^#/ && $first++ == 0' "$COMMIT_MSG_FILE" ;;
+  *) ;;
+ esac
 
-# SOB=$(git var GIT_COMMITTER_IDENT | sed -n 's/^\(.*>\).*$/Signed-off-by: \1/p')
-# git interpret-trailers --in-place --trailer "$SOB" "$COMMIT_MSG_FILE"
-# if test -z "$COMMIT_SOURCE"
-# then
-#   /usr/bin/perl -i.bak -pe 'print "\n" if !$first_line++' "$COMMIT_MSG_FILE"
-# fi
+ SOB=$(git var GIT_COMMITTER_IDENT | sed -n 's/^\(.*>\).*$/Signed-off-by: \1/p')
+ git interpret-trailers --in-place --trailer "$SOB" "$COMMIT_MSG_FILE"
+ if test -z "$COMMIT_SOURCE"
+ then
+   /usr/bin/perl -i.bak -pe 'print "\n" if !$first_line++' "$COMMIT_MSG_FILE"
+ fi
