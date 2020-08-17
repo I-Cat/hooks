@@ -1,5 +1,5 @@
 #!
-/bin/sh
+usr/bin/git
 #
 # Copyright (c) 2006, 2008 Junio C Hamano
 #
