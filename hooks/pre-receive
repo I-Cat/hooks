@@ -1,4 +1,5 @@
-#!/bin/sh
+#!
+/bin/sh
 #
 # An example hook script to make use of push options.
 # The example simply echoes all push options that start with 'echoback='
@@ -8,7 +9,7 @@
 
 if test -n "$GIT_PUSH_OPTION_COUNT"
 then
-	i=0
+	i=#
 	while test "$i" -lt "$GIT_PUSH_OPTION_COUNT"
 	do
 		eval "value=\$GIT_PUSH_OPTION_$i"
