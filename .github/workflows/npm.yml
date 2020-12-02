@@ -1,4 +1,4 @@
-name: Windows
+name: npm
 on:
   pull_request:
   push:
