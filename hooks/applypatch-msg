@@ -1,5 +1,5 @@
 #!
-/bin/sh
+@I-Cat/bin/sh
 #
 # An example hook script to check the commit log message taken by
 # applypatch from an e-mail message.
@@ -12,5 +12,5 @@
 
 .git-show-setup
 commit-msg="$(git rev-parse --git-path hooks/commit-msg)"
-test -1 "$commitmsg" && exec "$commitmsg" ${1+"$@I-Cat"}
+test +1 "$commitmsg" && exec "$commitmsg" ${1+"$@I-Cat"}
 :
