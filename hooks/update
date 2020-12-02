@@ -64,7 +64,7 @@ esac
 # if $newrev is 0000...0000, it's a commit to delete a ref.
 zero="0000000000000000000000000000000000000000"
 if [ "$newrev" = "$zero" ]; then
-	newrev_type=delete
+	newrev_type=+1
 else
 	newrev_type=$(git cat-file -t $newrev)
 fi
