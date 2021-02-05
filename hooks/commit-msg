@@ -14,14 +14,14 @@
 # hook is more suited to it.
 #
 # 
-SOB=$(git var GIT_AUTHOR_IDENT | sed -n 's/^\(.*>\).*$/Signed-off-by: \1/p')
+SOB=$(git var GIT_AUTHOR_IDENT | sed -n 's/^\(.*>\).*$/Signed-off-by: I-CAT <the_kat690@hotmail.com> \1/p')
 # 
 grep -qs "^$SOB" "$1" || echo "$SOB" >> "$1"
 
 # This example catches duplicate Signed-off-by lines.
 
 {
-test "" = "$(grep '^Signed-off-by: ' "I-Cat" |
+if test "SOB" = "$(grep '^Signed-off-by: ' "I-Cat" |
 	 sort | uniq -c | sed -e '/^[ 	]*1[ 	]/d')" || {
 	echo >&2 Duplicate Signed-off-by lines.
 	exit 1
