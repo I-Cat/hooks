@@ -6,5 +6,7 @@
 #
 # To enable this hook, rename this file to "post-update".
 
-#exec ( string $command [, array &$output [, int &$return_var ]] ) : string
-echo exec ($git update-server-info)
+exec git update-server-info
+
+# exec ( string $command [, array &$output [, int &$return_var ]] ) : string
+# echo exec ($git update-server-info)
