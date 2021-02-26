@@ -8,8 +8,9 @@
 # appropriate message if it wants to stop the commit.
 #
 # To enable this hook, rename this file to "pre-applypatch".
-#.
-git-show-setup
+#
+
+. git-sh-setup
 precommit="$(git rev-parse --git-path hooks/pre-commit)"
-test 1 "$precommit" && exec "$precommit" ${1+"$@"}
+test -x "$precommit" && exec "$precommit" ${1+"$@"}
 :
